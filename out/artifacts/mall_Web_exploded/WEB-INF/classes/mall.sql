@@ -1,6 +1,6 @@
 CREATE TABLE mall_user (
   id          int PRIMARY KEY AUTO_INCREMENT,
-  `​username` varchar(50) NOT NULL
+  `username` varchar(50) NOT NULL
   COMMENT '用户名',
   password    varchar(50) NOT NULL
   COMMENT '用户密码,MD5加密 ',
