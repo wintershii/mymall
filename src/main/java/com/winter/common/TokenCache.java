@@ -13,6 +13,8 @@ import java.util.concurrent.TimeUnit;
  * token缓存封装类
  */
 public class TokenCache {
+
+    public static final String TOKEN_PREFIX = "token_";
     //日志
     private static Logger logger = LoggerFactory.getLogger(TokenCache.class);
 
