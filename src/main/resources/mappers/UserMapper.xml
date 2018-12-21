@@ -16,7 +16,7 @@
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
-    id, ​username, password, email, phone, question, answer, role, create_time, update_time
+    id, username, password, email, phone, question, answer, role, create_time, update_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -29,7 +29,7 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.winter.pojo.User">
-    insert into mall_user (id, ​username, password, 
+    insert into mall_user (id, username, password,
       email, phone, question, 
       answer, role, create_time, 
       update_time)
@@ -45,7 +45,7 @@
         id,
       </if>
       <if test="​username != null">
-        ​username,
+        username,
       </if>
       <if test="password != null">
         password,
@@ -140,7 +140,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.winter.pojo.User">
     update mall_user
-    set ​username = #{​username,jdbcType=VARCHAR},
+    set username = #{​username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},

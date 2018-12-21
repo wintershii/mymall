@@ -1438,7 +1438,7 @@ order_no</ColNames>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="324" parent="239" name="​username">
+    <column id="324" parent="239" name="username">
       <Position>2</Position>
       <Comment>用户名</Comment>
       <DataType>varchar(50)|0s</DataType>
@@ -1494,7 +1494,7 @@ order_no</ColNames>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="333" parent="239" name="user_name_unique">
-      <ColNames>​username</ColNames>
+      <ColNames>username</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
@@ -1504,7 +1504,7 @@ order_no</ColNames>
       <Primary>1</Primary>
     </key>
     <key id="335" parent="239" name="user_name_unique">
-      <ColNames>​username</ColNames>
+      <ColNames>username</ColNames>
       <UnderlyingIndexName>user_name_unique</UnderlyingIndexName>
     </key>
   </database-model>
