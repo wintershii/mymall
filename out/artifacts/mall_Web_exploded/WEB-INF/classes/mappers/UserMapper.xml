@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.winter.pojo.User">
     <constructor>
       <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="​username" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="username" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="password" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="email" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="phone" javaType="java.lang.String" jdbcType="VARCHAR" />
@@ -33,7 +33,7 @@
       email, phone, question, 
       answer, role, create_time, 
       update_time)
-    values (#{id,jdbcType=INTEGER}, #{​username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
       #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{question,jdbcType=VARCHAR}, 
       #{answer,jdbcType=VARCHAR}, #{role,jdbcType=INTEGER}, now(),
       now())
@@ -44,8 +44,8 @@
       <if test="id != null">
         id,
       </if>
-      <if test="​username != null">
-        username,
+      <if test="username != null">
+       username,
       </if>
       <if test="password != null">
         password,
@@ -76,8 +76,8 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="​username != null">
-        #{​username,jdbcType=VARCHAR},
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
       </if>
       <if test="password != null">
         #{password,jdbcType=VARCHAR},
@@ -108,8 +108,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.winter.pojo.User">
     update mall_user
     <set>
-      <if test="​username != null">
-        ​username = #{​username,jdbcType=VARCHAR},
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
       </if>
       <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
@@ -140,7 +140,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.winter.pojo.User">
     update mall_user
-    set username = #{​username,jdbcType=VARCHAR},
+    set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
@@ -185,4 +185,24 @@
     and question = #{question}
     and answer = #{answer}
   </select>
+
+  <update id="updatePasswordByUsername" parameterType="map">
+    update mall_user
+    set password = #{passwordNew},update_time = now()
+    where username = #{username}
+  </update>
+  
+  <select id="checkPassword" resultType="int" parameterType="map">
+    select
+    count(1)
+    from mall_user
+    where id = #{userId}
+    and password = #{password}
+  </select>
+
+    <select id="checkEmailByUserId" resultType="int" parameterType="map">
+        select count(1) from mall_user
+        where email = #{email}
+        and id != #{userId}
+    </select>
 </mapper>

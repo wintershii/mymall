@@ -36,6 +36,7 @@ public class User {
         this.updateTime = updateTime;
     }
 
+
     public User() {
         super();
     }
