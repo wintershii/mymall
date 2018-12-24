@@ -1,5 +1,7 @@
 package com.winter.pojo;
 
+import com.winter.util.MD5Util;
+
 import java.util.Date;
 
 public class User {
@@ -119,5 +121,10 @@ public class User {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println(MD5Util.MD5EncodeUtf8("123456"));
     }
 }
