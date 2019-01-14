@@ -31,7 +31,7 @@ public class CategoryManageController {
      * @param parentId
      * @return
      */
-    @RequestMapping(value = "/add_category.do")
+    @RequestMapping(value = "/addCategory.do")
     @ResponseBody
     public ServerResponse addCategory(HttpSession session, String categoryName,
                                       @RequestParam(value = "parentId",defaultValue = "0") int parentId) {
@@ -57,7 +57,7 @@ public class CategoryManageController {
      * @param categoryName
      * @return
      */
-    @RequestMapping(value = "/set_category_name.do")
+    @RequestMapping(value = "/setCategoryName.do")
     @ResponseBody
     public ServerResponse setCategoryName(HttpSession session, Integer categoryId, String categoryName) {
         User user = (User) session.getAttribute(Const.CURRENT_USER);
@@ -74,7 +74,7 @@ public class CategoryManageController {
         }
     }
 
-    @RequestMapping(value = "/get_category.do")
+    @RequestMapping(value = "/getCategory.do")
     @ResponseBody
     public ServerResponse getChildrenParallelCategory(HttpSession session,
                                                       @RequestParam(value = "categoryId",defaultValue = "0") Integer categoryId) {
@@ -93,7 +93,7 @@ public class CategoryManageController {
 
     }
 
-    @RequestMapping(value = "/get_deep_category.do")
+    @RequestMapping(value = "/getDeepCategory.do")
     @ResponseBody
     public ServerResponse getCategoryAndDeepChildrenCategory(HttpSession session,
                                                              @RequestParam(value = "categoryId",defaultValue = "0") Integer categoryId) {
