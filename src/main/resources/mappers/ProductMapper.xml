@@ -196,6 +196,6 @@
         and productId = #{productId}
       </if>
     </where>
-
   </select>
+
 </mapper>

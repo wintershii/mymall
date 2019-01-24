@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: shidongxuan
@@ -12,5 +13,12 @@
 </head>
 <body>
 
+spring mvc上传文件
+
+
+<form method="post" action="<c:url value="/manage/product/upload.do"/>" enctype="multipart/form-data">
+    <input type="file" name="upload_file">
+    <input type="submit" value="上传">
+</form>
 </body>
 </html>
