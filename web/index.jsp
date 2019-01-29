@@ -20,5 +20,9 @@ spring mvc上传文件
     <input type="file" name="upload_file">
     <input type="submit" value="上传">
 </form>
+
+<form enctype="">
+
+</form>
 </body>
 </html>
